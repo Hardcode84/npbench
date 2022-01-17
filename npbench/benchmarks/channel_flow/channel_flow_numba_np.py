@@ -8,7 +8,7 @@
 # and all code is under BSD-3 clause (previously under MIT, and changed on March 8, 2018).
 
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 
 
 @nb.jit(nopython=True, parallel=True, fastmath=True)

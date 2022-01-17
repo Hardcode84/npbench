@@ -2,7 +2,7 @@
 # TODO: Add GPL-3.0 License
 
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 """
 Create Your Own N-body Simulation (With Python)
 Philip Mocz (2020) Princeton Univeristy, @PMocz

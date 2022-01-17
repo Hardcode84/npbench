@@ -1,5 +1,5 @@
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 
 
 # Adapted from https://github.com/GridTools/gt4py/blob/1caca893034a18d5df1522ed251486659f846589/tests/test_integration/stencil_definitions.py#L194

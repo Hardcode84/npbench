@@ -1,6 +1,6 @@
 # Sparse Matrix-Vector Multiplication (SpMV)
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 
 
 # Matrix-Vector Multiplication with the matrix given in Compressed Sparse Row

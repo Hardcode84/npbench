@@ -1,7 +1,7 @@
 # Copyright 2021 ETH Zurich and the NPBench authors. All rights reserved.
 
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 
 
 @nb.jit(nopython=True, parallel=False, fastmath=True)

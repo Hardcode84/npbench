@@ -1,5 +1,5 @@
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 
 
 # Adapted from https://gist.github.com/oysstu/68072c44c02879a2abf94ef350d1c7c6

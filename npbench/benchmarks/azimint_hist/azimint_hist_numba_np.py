@@ -35,7 +35,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 
 
 @nb.jit(nopython=True, parallel=True, fastmath=True)

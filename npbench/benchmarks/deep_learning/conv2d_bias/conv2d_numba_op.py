@@ -1,5 +1,5 @@
 import numpy as np
-import numba as nb
+import npbench.infrastructure.numba_decorator as nb
 
 
 # Deep learning convolutional operator (stride = 1)

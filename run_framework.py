@@ -16,6 +16,7 @@ def run_benchmark(benchname, fname, preset, validate, repeat, timeout,
     lcount.count()
     test = Test(bench, frmwrk, numpy)
     test.run(preset, validate, repeat, timeout, ignore_errors)
+    return True
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -61,7 +62,10 @@ if __name__ == "__main__":
                   args["ignore_errors"])
         )
         p.start()
-        p.join()
+        res = p.join(args["timeout"] * 2)
+        if res is None:
+            print(f'Terminating process due to timeout: {benchname}')
+            p.kill()
         exit_code = p.exitcode
         if exit_code != 0:
             failed.append(benchname)

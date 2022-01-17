@@ -1,5 +1,6 @@
 # Copyright 2021 ETH Zurich and the NPBench authors. All rights reserved.
 import time
+import sys
 
 from npbench.infrastructure import (Benchmark, Framework, timeout_decorator as
                                     tout, utilities as util)
@@ -20,6 +21,7 @@ class Test(object):
                  mode: str, bdata: Dict[str, Any], repeat: int,
                  ignore_erros: bool) -> Tuple[Any, Sequence[float]]:
         report_str = frmwrk.info["full_name"] + " - " + impl_name
+        sys.stdout.flush()
         try:
             copy = frmwrk.copy_func()
             setup_str = frmwrk.setup_str(self.bench, impl)

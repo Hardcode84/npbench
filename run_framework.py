@@ -63,7 +63,7 @@ if __name__ == "__main__":
         )
         p.start()
         res = p.join(args["timeout"] * 2)
-        if res is None:
+        if res is None and p.exitcode is None:
             print(f'Terminating process due to timeout: {benchname}')
             p.kill()
         exit_code = p.exitcode

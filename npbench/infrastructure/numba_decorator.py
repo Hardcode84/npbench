@@ -5,9 +5,9 @@ if False:
     njit = np.njit
     vectorize = nb.vectorize
 else:
-    import numba_dpcomp
-    jit = numba_dpcomp.jit
-    njit = numba_dpcomp.njit
-    vectorize = numba_dpcomp.vectorize
+    import numba_mlir
+    jit = numba_mlir.jit
+    njit = numba_mlir.njit
+    vectorize = numba_mlir.vectorize
 
 prange = nb.prange

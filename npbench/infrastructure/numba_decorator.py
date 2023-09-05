@@ -14,9 +14,7 @@ elif _decorator == "numba-mlir":
     vectorize = numba_mlir.vectorize
 elif _decorator == "replace-parfor":
     import numba_mlir
-    def jit(*args, **kwargs):
-        return numba_mlir.jit(*args, **kwargs, replace_parfors=True)
-
+    jit = nb.jit
     def njit(*args, **kwargs):
         return numba_mlir.njit(*args, **kwargs, replace_parfors=True)
 

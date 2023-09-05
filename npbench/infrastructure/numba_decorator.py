@@ -15,10 +15,10 @@ elif _decorator == "numba-mlir":
 elif _decorator == "replace-parfor":
     import numba_mlir
     def jit(*args, **kwargs):
-        return numba_mlir.jit(*args, *kwargs, replace_parfors=True)
+        return numba_mlir.jit(*args, **kwargs, replace_parfors=True)
 
     def njit(*args, **kwargs):
-        return numba_mlir.njit(*args, *kwargs, replace_parfors=True)
+        return numba_mlir.njit(*args, **kwargs, replace_parfors=True)
 
     vectorize = nb.vectorize
 else:

@@ -3,8 +3,12 @@ import difflib
 import time
 
 from npbench.infrastructure import Benchmark, Framework, utilities as util
-from pygount import SourceAnalysis
 
+try:
+    from pygount import SourceAnalysis
+    _has_pygount = True
+except ImportError:
+    _has_pygount = False
 
 class LineCount(object):
     """ A class for counting lines of code. """
@@ -21,7 +25,7 @@ class LineCount(object):
         and how many lines are different compared to the NumPy implementation.
         """
 
-        if self.numpy:
+        if self.numpy and _has_pygount:
             np_file, _ = self.numpy.impl_files(self.bench)[0]
             np_analysis = SourceAnalysis.from_file(np_file, "pygount")
             # print(np_analysis.code_count)
